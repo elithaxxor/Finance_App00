@@ -374,7 +374,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="amountInvestedLabel" destination="tEX-hm-VLR" id="ANS-5w-Xxi"/>
-                        <outlet property="annualReturnLanel" destination="Drh-y9-J5h" id="to9-UM-9gT"/>
+                        <outlet property="annualReturnLabel" destination="Drh-y9-J5h" id="to9-UM-9gT"/>
                         <outlet property="assetNameLabel" destination="6EE-QC-KOA" id="1kD-4Q-4jj"/>
                         <outlet property="currentValLabel" destination="cMy-aY-GqY" id="q9r-I4-F0k"/>
                         <outlet property="dateSlider" destination="1ER-fx-pZg" id="f6x-kh-xSN"/>
@@ -393,8 +393,91 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHu-zZ-Xfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ryC-Ll-fdz">
+                    <rect key="frame" x="0.0" y="0.0" width="101.5" height="34.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="gray" title="News"/>
+                </button>
             </objects>
             <point key="canvasLocation" x="1414" y="153"/>
+        </scene>
+        <!--Twitter Predict View Controller-->
+        <scene sceneID="QWh-pO-kV7">
+            <objects>
+                <viewController id="3Kh-M9-vGd" customClass="TwitterPredictViewController" customModule="Finance_App00" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J6A-W8-PeO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZnH-as-ybl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="hYb-jd-M54">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtW-Fd-8gB">
+                                                <rect key="frame" x="153" y="0.0" width="108" height="652"/>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How do people feel about..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kry-OT-nkQ">
+                                                <rect key="frame" x="0.0" y="707" width="414" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="kvn-r1-BSr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5b-VP-1OT">
+                                                <rect key="frame" x="157" y="812" width="100" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="dNS-4z-DMh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Predict!">
+                                                    <color key="titleColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="predictPressed:" destination="3Kh-M9-vGd" eventType="touchUpInside" id="L3B-4m-Jfi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Kry-OT-nkQ" secondAttribute="trailing" id="K8x-jw-kAP"/>
+                                            <constraint firstItem="Kry-OT-nkQ" firstAttribute="leading" secondItem="hYb-jd-M54" secondAttribute="leading" id="Sh2-M6-cIK"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hYb-jd-M54" secondAttribute="trailing" id="7IE-Iv-a7p"/>
+                                    <constraint firstItem="hYb-jd-M54" firstAttribute="top" secondItem="ZnH-as-ybl" secondAttribute="top" id="LWb-Lb-37T"/>
+                                    <constraint firstAttribute="bottom" secondItem="hYb-jd-M54" secondAttribute="bottom" id="Omz-q6-pVv"/>
+                                    <constraint firstItem="hYb-jd-M54" firstAttribute="leading" secondItem="ZnH-as-ybl" secondAttribute="leading" id="l9I-WG-arX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cxh-zE-skt"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZnH-as-ybl" firstAttribute="leading" secondItem="cxh-zE-skt" secondAttribute="leading" id="2Vj-Qx-ArQ"/>
+                            <constraint firstItem="ZnH-as-ybl" firstAttribute="top" secondItem="J6A-W8-PeO" secondAttribute="top" id="F8i-jc-6L4"/>
+                            <constraint firstItem="ZnH-as-ybl" firstAttribute="bottom" secondItem="cxh-zE-skt" secondAttribute="bottom" id="j4u-Qa-CTi"/>
+                            <constraint firstItem="ZnH-as-ybl" firstAttribute="trailing" secondItem="cxh-zE-skt" secondAttribute="trailing" id="zTF-fF-y2L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="ZnH-as-ybl" id="7Tr-MB-s3b"/>
+                        <outlet property="sentimentLabel" destination="vtW-Fd-8gB" id="KO4-pL-DCk"/>
+                        <outlet property="textField" destination="Kry-OT-nkQ" id="u3a-Ze-bLi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lW-kA-qco" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="923"/>
         </scene>
         <!--News-->
         <scene sceneID="qrO-vW-Pj6">
@@ -430,35 +513,6 @@
             </objects>
             <point key="canvasLocation" x="1390" y="915"/>
         </scene>
-        <!--News Table View Controller-->
-        <scene sceneID="UxJ-Hq-P7t">
-            <objects>
-                <tableViewController id="TtA-Ub-sW6" customClass="NewsTableViewController" customModule="Finance_App00" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gRU-j4-Lhs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="moq-iw-NIG">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="moq-iw-NIG" id="UP8-rB-NJS">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="TtA-Ub-sW6" id="YCn-IR-iKG"/>
-                            <outlet property="delegate" destination="TtA-Ub-sW6" id="vaM-Tx-ImO"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="fMC-Tc-ATN"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LE2-87-Mgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2209" y="950"/>
-        </scene>
         <!--Table View Controller-->
         <scene sceneID="x5R-jO-47G">
             <objects>
@@ -480,7 +534,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Calculator">
+                                        <fragment content="News">
                                             <attributes>
                                                 <font key="NSFont" size="18" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -489,7 +543,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="akb-Eq-xbU" kind="show" identifier="" id="6iW-Pi-O5M"/>
+                                    <segue destination="akb-Eq-xbU" kind="show" identifier="startToNews" id="6iW-Pi-O5M"/>
                                 </connections>
                             </button>
                             <prototypes>
@@ -541,7 +595,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="gray" title="Search"/>
                             <connections>
-                                <segue destination="9PO-6m-lrR" kind="show" id="qlB-z6-XNT"/>
+                                <segue destination="9PO-6m-lrR" kind="show" identifier="startToSearch" id="qlB-z6-XNT"/>
                             </connections>
                         </button>
                     </navigationItem>
@@ -953,7 +1007,7 @@
                                             <connections>
                                                 <action selector="dcf2Calc:" destination="9PO-6m-lrR" eventType="touchDown" id="H3r-Y6-5HU"/>
                                                 <action selector="searchClassicCalc:" destination="9PO-6m-lrR" eventType="touchUpInside" id="6T5-PX-iA7"/>
-                                                <segue destination="yiw-ef-3eK" kind="show" identifier="toFinanceCalc" id="UXe-eX-hMz"/>
+                                                <segue destination="yiw-ef-3eK" kind="show" identifier="searchToFinanceCalc" id="UXe-eX-hMz"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1031,7 +1085,7 @@
             <objects>
                 <tableViewController id="jgh-o0-rll" customClass="DateSelectionTableViewController" customModule="Finance_App00" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="M3m-Xg-eti">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1086,10 +1140,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lH2-6Y-aiB"/>
+        <segue reference="E8L-ay-0aW"/>
         <segue reference="qlB-z6-XNT"/>
-        <segue reference="0zh-tD-tfh"/>
-        <segue reference="y7g-a7-pSJ"/>
+        <segue reference="kwD-7z-HBG"/>
+        <segue reference="7MU-3V-j4S"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="keyboard.fill" catalog="system" width="128" height="79"/>

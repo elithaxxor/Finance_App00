@@ -33,12 +33,18 @@ struct DCALogic {
 
         let isProfitable = sharePrice > calculatedCurrentVal
 
+        let calculatedAnnualReturn = calculateAnnualReturn(investmentAmount: investmentAmount,
+                                                           totalEquityValue: calculatedCurrentVal,
+                                                           dateIdx: investedDateIdx)
+
 
         print("[+][+] Calculated Totals: [(Individual) Asset Price] \(sharePrice)")
         print("[+][+] Calculated Totals: [(Total) Equity in holdings] \(totalEquityValue)")
         print("[+][+] Calculated Totals: [calculatedCurrentVal] \(calculatedCurrentVal)")
         print("[+][+] Calculated Totals: [Calculated Yield] \(calulcatedYield)")
         print("[+][+] Calculated Totals: [Investment Amount] : \(investmentAmount)")
+        print("[+][+] Calculated Totals: [calculated Annual Return] : \(calculatedAnnualReturn)")
+
         print("[+][+] Calculated Totals: [gain] : \(calculatedGain)")
         print("[+][+] Calculated Totals: [is Profitable?] : \(isProfitable)")
 
@@ -49,9 +55,24 @@ struct DCALogic {
             investedAmt: investmentAmount,
             gain: calculatedGain,
             yield: calulcatedYield,
-            annualReturn: 0.0,
+            annualReturn: calculatedAnnualReturn,
             isProfitable: isProfitable)
     }
+
+    //MARK: Calculate Annual Return
+    private func calculateAnnualReturn(investmentAmount: Double, totalEquityValue: Double, dateIdx: Int  ) -> Double {
+        var annualReturn = Double()
+        let rate = totalEquityValue / investmentAmount
+        let years = ((dateIdx + 1) / 12).convertInt2Double
+        annualReturn = pow(rate, (1 / years )) - 1
+
+        print("[+] Calculating Annual Return : \(dateIdx) [\(investmentAmount)] *  [\(totalEquityValue)] ")
+        print("[+] Calculating using..  : *[rate] \(rate) *[years] [\(investmentAmount)] *  [\(totalEquityValue)] ")
+        print("[+] Calculating [RESULTS] * [\(annualReturn)] * ")
+
+        return annualReturn
+    }
+
 
 
     // currentValue = currentSharesHeld * SharePrice [initial investment]

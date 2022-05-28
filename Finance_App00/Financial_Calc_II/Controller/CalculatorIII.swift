@@ -52,7 +52,7 @@ class CalculatorIII: ViewControllerLogger {
 			
 			if calcMethod == "." {
 				guard let decVal = Double(DisplayView.text!) else { fatalError("Could not validate num for \(DisplayView.text)")}
-                let decimalNum = Logic.handleDecimal(num: number)
+                let decimalNum = Logic.handleDecimal(num: decVal)
                 print("[BEING CALCUALTED] \(decimalNum)")
 			}
 			if calcMethod == "+" {

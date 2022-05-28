@@ -49,6 +49,7 @@
 		65737B7028402AEF00C69FF8 /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B4528402AEE00C69FF8 /* APIWorker.swift */; };
 		65737B7128402AEF00C69FF8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B4628402AEE00C69FF8 /* Extensions.swift */; };
 		65737B7328402AEF00C69FF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B4828402AEE00C69FF8 /* SceneDelegate.swift */; };
+		65AD3E232842717F0039EFCF /* TwitterPredictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AD3E222842717F0039EFCF /* TwitterPredictViewController.swift */; };
 		65C3849928417F3000C23FEE /* DCALogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3849828417F3000C23FEE /* DCALogic.swift */; };
 		65C3849C2841D69A00C23FEE /* Animated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3849B2841D69A00C23FEE /* Animated.swift */; };
 		65C3849E2841EF3800C23FEE /* TableViewControllerLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C3849D2841EF3800C23FEE /* TableViewControllerLogger.swift */; };
@@ -104,6 +105,7 @@
 		65737B4628402AEE00C69FF8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		65737B4728402AEE00C69FF8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65737B4828402AEE00C69FF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		65AD3E222842717F0039EFCF /* TwitterPredictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterPredictViewController.swift; sourceTree = "<group>"; };
 		65C3849828417F3000C23FEE /* DCALogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCALogic.swift; sourceTree = "<group>"; };
 		65C3849B2841D69A00C23FEE /* Animated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animated.swift; sourceTree = "<group>"; };
 		65C3849D2841EF3800C23FEE /* TableViewControllerLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerLogger.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				65737B2128402AEE00C69FF8 /* CalculatorIII.swift */,
 				65737B2228402AEE00C69FF8 /* New Group */,
 				65737B2428402AEE00C69FF8 /* PageViewController.swift */,
+				65AD3E222842717F0039EFCF /* TwitterPredictViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				65737B5A28402AEF00C69FF8 /* CalculatorIII.swift in Sources */,
 				65737B5628402AEE00C69FF8 /* PDFScannerAppDelegate.swift in Sources */,
 				65737B6B28402AEF00C69FF8 /* InfoView.swift in Sources */,
+				65AD3E232842717F0039EFCF /* TwitterPredictViewController.swift in Sources */,
 				65737B5728402AEF00C69FF8 /* CTScanTextApp.swift in Sources */,
 				65C384A02841F51A00C23FEE /* TableViewCellLogger.swift in Sources */,
 				65737B6E28402AEF00C69FF8 /* ViewControllerLogger.swift in Sources */,

@@ -46,10 +46,13 @@ struct APIWorker {
                 return Fail(error:error).eraseToAnyPublisher()
         }
 
-        let apiURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(keywords)&apikey=\(API_KEY)"
-        guard let url = URL(string: apiURL) else { return Fail(error: APIError.badRequest).eraseToAnyPublisher() }
-        let urlResult = parseURL(apiURL: apiURL)
+       // let apiURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(keywords)&apikey=\(API_KEY)"
+        let apiURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(queryString)&apikey=\(API_KEY)"
+        print("[?] Fetching API with URL/KEY \(API_KEY), \(keywords) \(apiURL)")
 
+
+        guard URL(string: apiURL) != nil else { return Fail(error: APIError.badRequest).eraseToAnyPublisher() }
+        let urlResult = parseURL(apiURL: apiURL)
         switch urlResult {
             case .success(let url):
                 return URLSession.shared.dataTaskPublisher(for: url)
@@ -69,6 +72,7 @@ struct APIWorker {
         let result = passQueryString(text: keywords)
         var queryString = String()
 
+        print("[?] TimeMonthModal [queryString] \(queryString) \(result)")
 
         switch result {
             case .success(let query):
@@ -80,6 +84,8 @@ struct APIWorker {
 
         let apiURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(keywords)&apikey=\(API_KEY)"
         let parsedResult = parseURL(apiURL: apiURL)
+
+        print("[?] TimeMonthModal [api_url] \(queryString) \(parsedResult)")
 
         switch parsedResult {
             case .success(let url):
@@ -97,6 +103,7 @@ struct APIWorker {
 
 
     private func passQueryString(text: String) -> Result<String, Error> {
+        print("[?] Parsing Query String \(text)")
         if let query = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
             return .success(query) }
         else {
@@ -105,6 +112,8 @@ struct APIWorker {
     }
 
     private func parseURL(apiURL: String) -> Result<URL, Error> {
+        print("[?] Parsing api-url \(apiURL)")
+
         if let url = URL(string: apiURL) {
             return .success(url)
         } else {

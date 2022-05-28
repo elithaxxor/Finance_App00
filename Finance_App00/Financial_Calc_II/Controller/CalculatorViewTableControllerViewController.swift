@@ -26,7 +26,7 @@ class CalculatorViewTableControllerViewController: TableViewControllerLogger {
     @IBOutlet weak var totalInvestedLabel : UILabel!
     @IBOutlet weak var gainLabel : UILabel!
     @IBOutlet weak var yieldLabel : UILabel!
-    @IBOutlet weak var annualReturnLanel : UILabel!
+    @IBOutlet weak var annualReturnLabel : UILabel!
 
 
     // TODO: Perform Segue :  identifer: doneBtn
@@ -83,7 +83,21 @@ class CalculatorViewTableControllerViewController: TableViewControllerLogger {
         setupTextFields()
         observeForm()
         setupSlider()
+        resetViews() 
         NSLog("[LOGGING--> <END> [CALCULATOR VC]")
+    }
+
+    private func resetViews() {
+        print("[!] Resetting Calculator View Controller")
+        createLogFile()
+        NSLog("[LOGGING--> <START> [CALCULATOR RESET VC]")
+        currentValLabel.text = "0.00"
+        initialInvestmentText.text = "0.00"
+        yieldLabel.text = "0"
+        gainLabel.text = "-"
+        annualReturnLabel.text = "-"
+        NSLog("[LOGGING--> <END> [CALCULATOR RESET VC]")
+
     }
 
     private func setupSlider() {
@@ -126,7 +140,7 @@ class CalculatorViewTableControllerViewController: TableViewControllerLogger {
             print("[?] [Month DCF TextField] \(self?.monthDCF ?? 0) ")
         }.store(in: &subscribers)
 
-        Publishers.CombineLatest3($initialDateOfInvestment, $initialInvestmentAmt, $monthDCF ).sink { [self](
+        Publishers.CombineLatest3($initialDateOfInvestment, $initialInvestmentAmt, $monthDCF ).sink { [weak self](
             initialDateOfInvestment, initialInvestmentAmt, monthDCF) in
 
             print("[PUBLISHER]-->[initial date of investment] \(String(describing: initialDateOfInvestment))")
@@ -137,20 +151,30 @@ class CalculatorViewTableControllerViewController: TableViewControllerLogger {
             guard let initialDateOfInvestment = initialDateOfInvestment,
                   let initialInvestmentAmt = initialInvestmentAmt,
                   let monthDCF = monthDCF,
-                  let asset = self.asset
+                  let asset = self?.asset
 
             else { return }
 
-            print("[+] [DATE] [\(initialDateOfInvestment)] +[AMOUNT] [\(initialInvestmentAmt)] + DCF [\(monthDCF)] ")
 
-            let results = dcaLogic.calculate(startingAmount: Double(initialInvestmentAmt), monthlyDCF: Double(monthDCF), investedDateIdx: initialDateOfInvestment, asset: asset)
 
-            self.currentValLabel.backgroundColor = (results.isProfitable == true) ? .winningGreen : .losingRed
-            self.currentValLabel.text = results.currentVal.string2doublePlaceholder2
-            self.totalInvestedLabel.text = results.investedAmt.formatDouble2Currency
-            self.gainLabel.text = results.gain.removeSymbolandDecimal(hasSymbol: true, hasDecimalHolder: true)
-            self.yieldLabel.text = results.yield.convertDouble2StrPercent
-            self.annualReturnLanel.text = results.annualReturn.convertDouble2String
+            let results = self?.dcaLogic.calculate(startingAmount: Double(initialInvestmentAmt), monthlyDCF: Double(monthDCF), investedDateIdx: initialDateOfInvestment, asset: asset)
+
+            print("[+] [DATE] [\(initialDateOfInvestment)] +[AMOUNT] [\(initialInvestmentAmt)] + DCF [\(monthDCF)] [+][+] Publisher Results results")
+
+            let isProfitable = (results?.isProfitable == true)
+            let gainSymbol = isProfitable ? "+" : "-"
+
+            self?.currentValLabel.backgroundColor = isProfitable ? .winningGreen : .losingRed
+            self?.currentValLabel.text = results?.currentVal.string2doublePlaceholder2
+            self?.totalInvestedLabel.text = results?.investedAmt.formatDouble2Currency
+            self?.gainLabel.text = results?.gain.removeSymbolandDecimal(hasSymbol: false, hasDecimalHolder: false).commonPrefix(with: gainSymbol)
+
+            self?.yieldLabel.textColor = isProfitable ? .winningGreen : .losingRed
+            self?.yieldLabel.text = results?.yield.convertDouble2StrPercent
+            
+            self?.annualReturnLabel.text = results?.annualReturn.convertDouble2StrPercent
+            self?.annualReturnLabel.textColor = isProfitable ? .winningGreen : .losingRed
+
 
         }
     }
