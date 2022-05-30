@@ -94,17 +94,8 @@ class TwitterPredictViewController: ViewControllerLogger {
         paramaters["success"] ??= success
         paramaters["failure"] ??= failure
 
-
-
-
-
-
     }
-
-    ) {
-
-    }
-
+)
 
 
     private func makePrediction(with tweets: String) {
