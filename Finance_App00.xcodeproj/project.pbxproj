@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65526F2928431F6000044F97 /* twitter-sanders-apple3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 65526F2828431F6000044F97 /* twitter-sanders-apple3.csv */; };
+		65526F2B2843202A00044F97 /* createMLmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65526F2A2843202A00044F97 /* createMLmodel.swift */; };
+		65526F30284344FD00044F97 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 65526F2F284344FD00044F97 /* MBProgressHUD */; };
+		65526F3328434A3300044F97 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 65526F3228434A3300044F97 /* SwiftyJSON */; };
+		65526F4628434AD000044F97 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65526F3D28434A3900044F97 /* SwifteriOS.framework */; };
+		65526F4728434AD000044F97 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65526F3D28434A3900044F97 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65737B4928402AEE00C69FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65737B0728402AEE00C69FF8 /* Assets.xcassets */; };
 		65737B4A28402AEE00C69FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65737B0A28402AEE00C69FF8 /* Preview Assets.xcassets */; };
 		65737B4B28402AEE00C69FF8 /* HackerNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B0B28402AEE00C69FF8 /* HackerNewsApp.swift */; };
@@ -32,7 +38,7 @@
 		65737B5F28402AEF00C69FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B2928402AEE00C69FF8 /* AppDelegate.swift */; };
 		65737B6028402AEF00C69FF8 /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B2B28402AEE00C69FF8 /* SearchPlaceholderView.swift */; };
 		65737B6128402AEF00C69FF8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B2D28402AEE00C69FF8 /* DetailView.swift */; };
-		65737B6228402AEF00C69FF8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B2E28402AEE00C69FF8 /* NetworkManager.swift */; };
+		65737B6228402AEF00C69FF8 /* newsAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B2E28402AEE00C69FF8 /* newsAPIWorker.swift */; };
 		65737B6328402AEF00C69FF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B2F28402AEE00C69FF8 /* ContentView.swift */; };
 		65737B6428402AEF00C69FF8 /* HomeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737B3128402AEE00C69FF8 /* HomeCardViewController.swift */; };
 		65737B6528402AEF00C69FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65737B3328402AEE00C69FF8 /* LaunchScreen.storyboard */; };
@@ -59,7 +65,62 @@
 		F4748B54F2B6CBCE2371F80B /* Pods_Finance_App00.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBBCA467FA2787EAF1E2253 /* Pods_Finance_App00.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		65526F3C28434A3900044F97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65526F3428434A3900044F97 /* Swifter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B9F50EE1944A5AB00894629;
+			remoteInfo = SwifteriOS;
+		};
+		65526F3E28434A3900044F97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65526F3428434A3900044F97 /* Swifter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B9F51131944A61D00894629;
+			remoteInfo = SwifterMac;
+		};
+		65526F4028434A3900044F97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65526F3428434A3900044F97 /* Swifter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B300C1F1944AA1A00993175;
+			remoteInfo = SwifterDemoiOS;
+		};
+		65526F4228434A3900044F97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65526F3428434A3900044F97 /* Swifter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B300C471944AECB00993175;
+			remoteInfo = SwifterDemoMac;
+		};
+		65526F4428434A3900044F97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65526F3428434A3900044F97 /* Swifter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6B4D5751C7BAC4500E06514;
+			remoteInfo = SwifterTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		65526F4828434AD000044F97 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				65526F4728434AD000044F97 /* SwifteriOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		65526F2828431F6000044F97 /* twitter-sanders-apple3.csv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "twitter-sanders-apple3.csv"; sourceTree = SOURCE_ROOT; };
+		65526F2A2843202A00044F97 /* createMLmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createMLmodel.swift; sourceTree = "<group>"; };
+		65526F3428434A3900044F97 /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = Swifter/Swifter.xcodeproj; sourceTree = "<group>"; };
 		65737AEA28402AD500C69FF8 /* Finance_App00.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finance_App00.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65737B0728402AEE00C69FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65737B0A28402AEE00C69FF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -86,7 +147,7 @@
 		65737B2928402AEE00C69FF8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65737B2B28402AEE00C69FF8 /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
 		65737B2D28402AEE00C69FF8 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		65737B2E28402AEE00C69FF8 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		65737B2E28402AEE00C69FF8 /* newsAPIWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newsAPIWorker.swift; sourceTree = "<group>"; };
 		65737B2F28402AEE00C69FF8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		65737B3128402AEE00C69FF8 /* HomeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardViewController.swift; sourceTree = "<group>"; };
 		65737B3228402AEE00C69FF8 /* Financial_Calc_II-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Financial_Calc_II-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -121,7 +182,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65526F30284344FD00044F97 /* MBProgressHUD in Frameworks */,
 				F4748B54F2B6CBCE2371F80B /* Pods_Finance_App00.framework in Frameworks */,
+				65526F3328434A3300044F97 /* SwiftyJSON in Frameworks */,
+				65526F4628434AD000044F97 /* SwifteriOS.framework in Frameworks */,
 				65C384A32841FB7E00C23FEE /* CTScanText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,9 +193,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65526F2C2843222700044F97 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		65526F2D2843225400044F97 /* TrainingData  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "TrainingData ";
+			sourceTree = "<group>";
+		};
+		65526F3528434A3900044F97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65526F3D28434A3900044F97 /* SwifteriOS.framework */,
+				65526F3F28434A3900044F97 /* SwifterMac.framework */,
+				65526F4128434A3900044F97 /* SwifterDemoiOS.app */,
+				65526F4328434A3900044F97 /* SwifterDemoMac.app */,
+				65526F4528434A3900044F97 /* SwifterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		65737AE128402AD500C69FF8 = {
 			isa = PBXGroup;
 			children = (
+				65526F3428434A3900044F97 /* Swifter.xcodeproj */,
 				65C3849F2841F51A00C23FEE /* TableViewCellLogger.swift */,
 				65737AEC28402AD500C69FF8 /* Finance_App00 */,
 				65737AEB28402AD500C69FF8 /* Products */,
@@ -163,7 +254,6 @@
 				65737B1028402AEE00C69FF8 /* Models */,
 				65737B2A28402AEE00C69FF8 /* Views */,
 				65737B1828402AEE00C69FF8 /* Controller */,
-				65737B4228402AEE00C69FF8 /* Helpers */,
 				65737B0528402AEE00C69FF8 /* HackerNews */,
 				65737B0E28402AEE00C69FF8 /* Protocols  */,
 				65737B2628402AEE00C69FF8 /* Workers */,
@@ -237,6 +327,7 @@
 		65737B1028402AEE00C69FF8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65737B4228402AEE00C69FF8 /* Helpers */,
 				65737B1128402AEE00C69FF8 /* Constants.swift */,
 				65737B1228402AEE00C69FF8 /* Asset.swift */,
 				65737B1328402AEE00C69FF8 /* calcLogic.swift */,
@@ -324,7 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				65737B2D28402AEE00C69FF8 /* DetailView.swift */,
-				65737B2E28402AEE00C69FF8 /* NetworkManager.swift */,
 				65737B2F28402AEE00C69FF8 /* ContentView.swift */,
 				65737B3028402AEE00C69FF8 /* Camera_Scanner */,
 			);
@@ -341,6 +431,9 @@
 		65737B3728402AEE00C69FF8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				65526F2D2843225400044F97 /* TrainingData  */,
+				65526F2C2843222700044F97 /* New Group */,
+				65526F2828431F6000044F97 /* twitter-sanders-apple3.csv */,
 				65737B3828402AEE00C69FF8 /* Assets.xcassets */,
 				65737B3928402AEE00C69FF8 /* Icons */,
 			);
@@ -378,12 +471,14 @@
 		65737B4228402AEE00C69FF8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				65737B2E28402AEE00C69FF8 /* newsAPIWorker.swift */,
+				65737B4528402AEE00C69FF8 /* APIWorker.swift */,
 				65737B4328402AEE00C69FF8 /* ViewControllerLogger.swift */,
 				65737B4428402AEE00C69FF8 /* APIService.swift */,
-				65737B4528402AEE00C69FF8 /* APIWorker.swift */,
 				65737B4628402AEE00C69FF8 /* Extensions.swift */,
 				65C3849828417F3000C23FEE /* DCALogic.swift */,
 				65C3849D2841EF3800C23FEE /* TableViewControllerLogger.swift */,
+				65526F2A2843202A00044F97 /* createMLmodel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -425,6 +520,7 @@
 				65737AE728402AD500C69FF8 /* Frameworks */,
 				65737AE828402AD500C69FF8 /* Resources */,
 				4D5DFDDFD35B68D451C85A65 /* [CP] Embed Pods Frameworks */,
+				65526F4828434AD000044F97 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,6 +529,8 @@
 			name = Finance_App00;
 			packageProductDependencies = (
 				65C384A22841FB7E00C23FEE /* CTScanText */,
+				65526F2F284344FD00044F97 /* MBProgressHUD */,
+				65526F3228434A3300044F97 /* SwiftyJSON */,
 			);
 			productName = Finance_App00;
 			productReference = 65737AEA28402AD500C69FF8 /* Finance_App00.app */;
@@ -464,15 +562,61 @@
 			mainGroup = 65737AE128402AD500C69FF8;
 			packageReferences = (
 				65C384A12841FB7E00C23FEE /* XCRemoteSwiftPackageReference "CTScanText" */,
+				65526F2E284344FD00044F97 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				65526F3128434A3300044F97 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 65737AEB28402AD500C69FF8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 65526F3528434A3900044F97 /* Products */;
+					ProjectRef = 65526F3428434A3900044F97 /* Swifter.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				65737AE928402AD500C69FF8 /* Finance_App00 */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		65526F3D28434A3900044F97 /* SwifteriOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwifteriOS.framework;
+			remoteRef = 65526F3C28434A3900044F97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		65526F3F28434A3900044F97 /* SwifterMac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwifterMac.framework;
+			remoteRef = 65526F3E28434A3900044F97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		65526F4128434A3900044F97 /* SwifterDemoiOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwifterDemoiOS.app;
+			remoteRef = 65526F4028434A3900044F97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		65526F4328434A3900044F97 /* SwifterDemoMac.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwifterDemoMac.app;
+			remoteRef = 65526F4228434A3900044F97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		65526F4528434A3900044F97 /* SwifterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwifterTests.xctest;
+			remoteRef = 65526F4428434A3900044F97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		65737AE828402AD500C69FF8 /* Resources */ = {
@@ -485,6 +629,7 @@
 				65737B4928402AEE00C69FF8 /* Assets.xcassets in Resources */,
 				65737B6A28402AEF00C69FF8 /* option@2x.png in Resources */,
 				65737B6628402AEF00C69FF8 /* Main.storyboard in Resources */,
+				65526F2928431F6000044F97 /* twitter-sanders-apple3.csv in Resources */,
 				65737B6828402AEF00C69FF8 /* power.textClipping in Resources */,
 				65737B6728402AEF00C69FF8 /* Assets.xcassets in Resources */,
 				65737B6928402AEF00C69FF8 /* 􀆕.textClipping in Resources */,
@@ -501,6 +646,10 @@
 			);
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Finance_App00/Pods-Finance_App00-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"$(SRCROOT)/newInputFile",
+				"",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -561,13 +710,14 @@
 				65737B4E28402AEE00C69FF8 /* Asset.swift in Sources */,
 				65737B5028402AEE00C69FF8 /* SearchResults.swift in Sources */,
 				65737B6F28402AEF00C69FF8 /* APIService.swift in Sources */,
-				65737B6228402AEF00C69FF8 /* NetworkManager.swift in Sources */,
+				65737B6228402AEF00C69FF8 /* newsAPIWorker.swift in Sources */,
 				65737B5B28402AEF00C69FF8 /* SearchTableViewCell.swift in Sources */,
 				65737B5128402AEE00C69FF8 /* PostData.swift in Sources */,
 				65737B5428402AEE00C69FF8 /* NewsTableViewController.swift in Sources */,
 				65737B5528402AEE00C69FF8 /* PDFScannerApp.swift in Sources */,
 				65C3849928417F3000C23FEE /* DCALogic.swift in Sources */,
 				65737B6028402AEF00C69FF8 /* SearchPlaceholderView.swift in Sources */,
+				65526F2B2843202A00044F97 /* createMLmodel.swift in Sources */,
 				65737B6128402AEF00C69FF8 /* DetailView.swift in Sources */,
 				65737B5C28402AEF00C69FF8 /* PageViewController.swift in Sources */,
 				65737B5D28402AEF00C69FF8 /* CalculatorViewTableControllerViewController.swift in Sources */,
@@ -729,6 +879,7 @@
 				DEVELOPMENT_TEAM = PCTB5RL5K6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finance_App00/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Finance_App00;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -758,6 +909,7 @@
 				DEVELOPMENT_TEAM = PCTB5RL5K6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finance_App00/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Finance_App00;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -800,6 +952,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		65526F2E284344FD00044F97 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		65526F3128434A3300044F97 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		65C384A12841FB7E00C23FEE /* XCRemoteSwiftPackageReference "CTScanText" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StewartLynch/CTScanText";
@@ -811,6 +979,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		65526F2F284344FD00044F97 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65526F2E284344FD00044F97 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+		65526F3228434A3300044F97 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65526F3128434A3300044F97 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		65C384A22841FB7E00C23FEE /* CTScanText */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 65C384A12841FB7E00C23FEE /* XCRemoteSwiftPackageReference "CTScanText" */;

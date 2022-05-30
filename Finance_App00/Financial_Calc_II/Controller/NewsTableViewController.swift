@@ -7,6 +7,9 @@
 
 import UIKit
 
+
+
+
 @IBDesignable
 class NewsTableViewController: TableViewControllerLogger {
 
@@ -15,9 +18,7 @@ class NewsTableViewController: TableViewControllerLogger {
 
         createLogFile()
         NSLog("[LOGGING--> <START> [NEWS-TABLE VC]")
-
-
-
+        
         NSLog("[LOGGING--> <END> [NEWS-TABLE VC]")
 
 
